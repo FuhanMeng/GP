@@ -1,0 +1,12 @@
+环境：
+先在anaconda中安装了python,创建了一个新的环境名为cu117py38
+然后安装了相应的torch和torchvision、cuda.
+然后根据本项目中的使用说明安装了timm。
+
+但是没有根据官方或者麦辣翅翅的教程中安装
+官方：
+pyproject.toml
+麦辣翅翅：
+pip install -r requirements.txt
+pip install ultralytics
+pip install yolo
