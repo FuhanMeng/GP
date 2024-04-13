@@ -8,8 +8,8 @@ import argparse
 classes = ['ore carrier', 'fishing boat', 'passenger ship', 'general cargo ship', 'bulk cargo carrier', 'container ship']
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--image_path', default='', type=str, help="path of images")
-parser.add_argument('--label_path', default='', type=str, help="path of labels .txt")
+parser.add_argument('--image_path', default='D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/person/images/test', type=str, help="path of images")
+parser.add_argument('--label_path', default='D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/person/labels/test', type=str, help="path of labels .txt")
 parser.add_argument('--save_path', type=str, default='data.json', help="if not split the dataset, give a path to a json file")
 arg = parser.parse_args()
 

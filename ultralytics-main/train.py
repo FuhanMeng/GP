@@ -17,8 +17,8 @@ if __name__ == '__main__':
                 optimizer='SGD', # using SGD\Adam, AdamW, NAdam, RAdam, RMSProp
                 save=True,
                 save_period=5,
-                resume=True, # last.pt path
-                lr_0=0.01, # SGD=1E-2，Adam=1E-3
+                # resume=True, # last.pt path
+                # lr_0=0.01, # SGD=1E-2，Adam=1E-3
                 # cos_lr, #
                 # amp=False, # close amp
                 # fraction=0.2,
