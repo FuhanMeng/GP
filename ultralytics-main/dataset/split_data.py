@@ -9,12 +9,12 @@ postfix = 'jpg'
 imgpath = 'VOCdevkit/JPEGImages'
 txtpath = 'VOCdevkit/txt'
 
-os.makedirs('images/train', exist_ok=True)
-os.makedirs('images/val', exist_ok=True)
-os.makedirs('images/test', exist_ok=True)
-os.makedirs('labels/train', exist_ok=True)
-os.makedirs('labels/val', exist_ok=True)
-os.makedirs('labels/test', exist_ok=True)
+os.makedirs('ship/images/train', exist_ok=True)
+os.makedirs('ship/images/val', exist_ok=True)
+os.makedirs('ship/images/test', exist_ok=True)
+os.makedirs('ship/labels/train', exist_ok=True)
+os.makedirs('ship/labels/val', exist_ok=True)
+os.makedirs('ship/labels/test', exist_ok=True)
 
 listdir = np.array([i for i in os.listdir(txtpath) if 'txt' in i])
 random.shuffle(listdir)
