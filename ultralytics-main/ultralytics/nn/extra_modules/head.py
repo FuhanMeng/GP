@@ -186,17 +186,21 @@ class Detect_Efficient(nn.Module):
         self.reg_max = 16  # DFL channels (ch[0] // 16 to scale 4/8/12/16/20 for n/s/m/l/x)
         self.no = nc + self.reg_max * 4  # number of outputs per anchor
         self.stride = torch.zeros(self.nl)  # strides computed during build
-        self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 3), Conv(x, x, 3)) for x in ch) # two 3x3 Conv
         # 10 detect
-        # self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 3, g=x // 16), Conv(x, x, 3, g=x // 16)) for x in ch) # two 3x3 Group Conv
-        # self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 1), Conv(x, x, 3)) for x in ch) # one 1x1 Conv, one 3x3 Conv
-        # self.stem = nn.ModuleList(nn.Sequential(EMSConv(x), Conv(x, x, 1)) for x in ch) # one EMSConv, one 1x1 Conv
-        # self.stem = nn.ModuleList(nn.Sequential(EMSConvP(x), Conv(x, x, 1)) for x in ch) # one EMSConvP, one 1x1 Conv
+        # self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 3), Conv(x, x, 3)) for x in ch)  # two 3x3 Conv 共享参数 8.2Gflops
+        # self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 3, g=x // 16), Conv(x, x, 3, g=x // 16)) for x in ch) # two 3x3 Group Conv 组卷积5.7G(不提升精度)
+        # self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 1), Conv(x, x, 3)) for x in ch) # one 1x1 Conv, one 3x3 Conv    6.9G
+        # 下边两个是自研的（多尺度信息、轻量化检测头）
+        # self.stem = nn.ModuleList(nn.Sequential(EMSConv(x), Conv(x, x, 1)) for x in ch) # one EMSConv, one 1x1 Conv    6.0G
+        self.stem = nn.ModuleList(nn.Sequential(EMSConvP(x), Conv(x, x, 1)) for x in ch) # one EMSConvP, one 1x1 Conv   6.5G
+        # cvpr
         # self.stem = nn.ModuleList(nn.Sequential(ScConv(x), Conv(x, x, 1)) for x in ch) # one 1x1 ScConv(CVPR2023), one 1x1 Conv
         # self.stem = nn.ModuleList(nn.Sequential(SCConv(x, x), Conv(x, x, 1)) for x in ch) # one 1x1 ScConv(CVPR2020), one 1x1 Conv
-        # self.stem = nn.ModuleList(nn.Sequential(DiverseBranchBlock(x, x, 3), DiverseBranchBlock(x, x, 3)) for x in ch) # two 3x3 DiverseBranchBlock
-        # self.stem = nn.ModuleList(nn.Sequential(RepConv(x, x, 3), RepConv(x, x, 3)) for x in ch) # two 3x3 RepConv
-        # self.stem = nn.ModuleList(nn.Sequential(Partial_conv3(x, 4), Conv(x, x, 1)) for x in ch) # one PConv(CVPR2023), one 1x1 Conv
+        # dvb训练后参数变大，但是融合后参数变小
+        # self.stem = nn.ModuleList(nn.Sequential(DiverseBranchBlock(x, x, 3), DiverseBranchBlock(x, x, 3)) for x in ch) # two 3x3 DiverseBranchBlock    8.2G
+        # self.stem = nn.ModuleList(nn.Sequential(RepConv(x, x, 3), RepConv(x, x, 3)) for x in ch) # two 3x3 RepConv    8.2G
+        # cvpr fast(er)net中的一个卷积块
+        # self.stem = nn.ModuleList(nn.Sequential(Partial_conv3(x, 4), Conv(x, x, 1)) for x in ch) # one PConv(CVPR2023), one 1x1 Conv   5.6G
         self.cv2 = nn.ModuleList(nn.Conv2d(x, 4 * self.reg_max, 1) for x in ch)
         self.cv3 = nn.ModuleList(nn.Conv2d(x, self.nc, 1) for x in ch)
         self.dfl = DFL(self.reg_max) if self.reg_max > 1 else nn.Identity()
