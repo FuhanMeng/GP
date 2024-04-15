@@ -14,16 +14,16 @@ scales: # model compound scaling constants, i.e. 'model=yolov8n.yaml' will call 
 # YOLOv8.0n backbone
 backbone:
   # [from, repeats, module, args]
-  - [-1, 1, Conv, [64, 3, 2]]  # 0-P1/2
+  - [-1, 1, Conv, [64, 3, 2]]  # 0-P1/2，这是第0层，也被称为P1。/2表示这一层将输入的尺寸减半
   - [-1, 1, Conv, [128, 3, 2]]  # 1-P2/4
   - [-1, 3, C2f, [128, True]]
   - [-1, 1, Conv, [256, 3, 2]]  # 3-P3/8
   - [-1, 6, C2f, [256, True]]
-  - [-1, 1, Conv, [512, 3, 2]]  # 5-P4/16
-  - [-1, 6, C2f, [512, True]]
+  - [-1, 1, Conv, [512, 3, 2]]  # 5-P4/16，P层往往是进行了特征图缩小
+  - [-1, 6, C2f, [512, True]]   # 第6层/P4，在P4的基础上进行了进一步的特征提取，但并没有改变特征图的尺寸，所以也是在P4阶段。
   - [-1, 1, Conv, [1024, 3, 2]]  # 7-P5/32
   - [-1, 3, C2f, [1024, True]]
-  - [-1, 1, SPPF, [1024, 5]]  # 9
+  - [-1, 1, SPPF, [1024, 5]]  # 9，这是第9层，没有额外的标记，因为这一层不改变特征图的尺寸
 
 # YOLOv8.0n head
 head:
@@ -31,11 +31,11 @@ head:
   - [[-1, 6], 1, Concat, [1]]  # cat backbone P4
   - [-1, 3, C2f, [512]]  # 12
 
-  - [-1, 1, nn.Upsample, [None, 2, 'nearest']]
+  - [-1, 1, nn.Upsample, [None, 2, 'nearest']]  # 做了上采样，所以上边的P4就变为下边的P3了。Px对应的是特征图大小。
   - [[-1, 4], 1, Concat, [1]]  # cat backbone P3
   - [-1, 3, C2f, [256]]  # 15 (P3/8-small)
 
-  - [-1, 1, Conv, [256, 3, 2]]
+  - [-1, 1, Conv, [256, 3, 2]]  # 做了卷积下采样，所以上边的P3又变成下边的P4了。
   - [[-1, 12], 1, Concat, [1]]  # cat head P4
   - [-1, 3, C2f, [512]]  # 18 (P4/16-medium)
 
@@ -43,4 +43,4 @@ head:
   - [[-1, 9], 1, Concat, [1]]  # cat head P5
   - [-1, 3, C2f, [1024]]  # 21 (P5/32-large)
 
-  - [[15, 18, 21], 1, Detect, [nc]]  # Detect(P3, P4, P5)
+  - [[15, 18, 21], 1, Detect, [nc]]  # Detect(P3, P4, P5)，这一层是YOLO模型的输出层，表示这一层是在P3、P4、P5这三个尺度上进行目标检测。

@@ -22,18 +22,18 @@ def finetune(param_dict, prune_model_path):
 if __name__ == '__main__':
     param_dict = {
         # origin
-        'model': 'runs/train/yolov8-repvit-RepNCSPELAN/weights/best.pt',
-        'data':'/root/data_ssd/dataset_crowdhuman/data_20per.yaml',
+        'model': 'ultralytics-main/runs_test/train/exp/weights/best.pt',
+        'data':'ultralytics-main/dataset/person_test/data_test.yaml',
         'imgsz': 640,
-        'epochs': 250,
+        'epochs': 100,  # 250-300
         'batch': 16,
         'workers': 8,
         'cache': True,
         'optimizer': 'SGD',
         'device': '0',
         'close_mosaic': 0,
-        'project':'runs/prune',
-        'name':'yolov8-repvit-RepNCSPELAN-lamp-exp4',
+        'project':'ultralytics-main/runs_test/prune',
+        'name':'yolov8-fasternet-EfficientHead-lamp-exp0',
         
         # prune
         'prune_method':'lamp',
