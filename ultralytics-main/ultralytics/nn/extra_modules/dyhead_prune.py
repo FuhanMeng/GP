@@ -143,7 +143,7 @@ class DyDCNv2(nn.Module):
                  in_channels,
                  out_channels,
                  stride=1,
-                 norm_cfg=dict(type='BN', requires_grad=True)):
+                 norm_cfg=dict(type='GN', num_groups=16, requires_grad=True)):
         super().__init__()
         self.with_norm = norm_cfg is not None
         bias = not self.with_norm
@@ -168,7 +168,7 @@ class DyHeadBlock_Prune(nn.Module):
 
     def __init__(self,
                  in_channels,
-                 norm_type='BN',
+                 norm_type='GN',
                  zero_init_offset=True,
                  act_cfg=dict(type='HSigmoid', bias=3.0, divisor=6.0)):
         super().__init__()
