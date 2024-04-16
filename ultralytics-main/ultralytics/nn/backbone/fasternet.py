@@ -36,6 +36,7 @@ class Partial_conv3(nn.Module):
 
     def forward_split_cat(self, x: Tensor) -> Tensor:
         # for training/inference
+        # 此处的split和cat会影响到剪枝，只要跳过72行的nn.Conv2d(mlp_hidden_dim, dim, 1, bias=False)层就行了
         x1, x2 = torch.split(x, [self.dim_conv3, self.dim_untouched], dim=1)
         x1 = self.partial_conv3(x1)
         x = torch.cat((x1, x2), 1)

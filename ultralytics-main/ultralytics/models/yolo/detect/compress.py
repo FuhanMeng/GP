@@ -45,6 +45,8 @@ from ultralytics.nn.extra_modules.block import Faster_Block, Fusion, IFM, Inject
 from ultralytics.nn.extra_modules.rep_block import DiverseBranchBlock
 from ultralytics.nn.extra_modules.dyhead_prune import DyHeadBlock_Prune
 from ultralytics.nn.backbone.convnextv2 import LayerNorm
+# from ultralytics.nn.backbone.fasternet import fasternet_t0
+from ultralytics.nn.backbone.fasternet import FasterNet
 
 class HiddenPrints:
     def __enter__(self):
@@ -121,6 +123,25 @@ def get_pruner(opt, model, example_inputs):
     #         ignored_layers.append(m.cv3[1][2])
     #         ignored_layers.append(m.cv3[2][2])
     #         ignored_layers.append(m.dfl)
+
+    # for mfh yolov8-fasternet-EfficientHead.yaml
+    # for fasternet
+    for k, m in model.named_modules():
+        if isinstance(m, Detect_Efficient):
+            ignored_layers.append(m.cv2)
+            ignored_layers.append(m.cv3)
+            ignored_layers.append(m.dfl)
+        if isinstance(m, Faster_Block):
+            ignored_layers.append(m.mlp[-1])
+    # for EfficientHead中的PConv系列
+  #  for k, m in model.named_modules():
+  #       if isinstance(m, Detect_Efficient):
+  #           ignored_layers.append(m.cv2)
+  #           ignored_layers.append(m.cv3)
+  #           ignored_layers.append(m.dfl)
+    # ignored_layers.append(model.model[11].cv2)  # 15-->11
+    # ignored_layers.append(model.model[14].cv2)  # 18-->14
+    # ignored_layers.append(model.model[17].cv2)  # 21-->17
     
     # for yolov8-Faster-GFPN-P2-EfficientHead.yaml
     # for k, m in model.named_modules():
@@ -147,9 +168,10 @@ def get_pruner(opt, model, example_inputs):
     #         ignored_layers.append(m.cv2)
     #         ignored_layers.append(m.cv3)
     #         ignored_layers.append(m.dfl)
-    ignored_layers.append(model.model[11].cv2)  # 15-->11
-    ignored_layers.append(model.model[14].cv2)  # 18-->14
-    ignored_layers.append(model.model[17].cv2)  # 21-->17
+    # ignored_layers.append(model.model[11].cv2)  # 15-->11
+    # ignored_layers.append(model.model[14].cv2)  # 18-->14
+    # ignored_layers.append(model.model[17].cv2)  # 21-->17
+
     
     # for yolov8-convnextv2-goldyolo-asf.yaml
     # customized_pruners[LayerNorm] = LayerNormPruner()

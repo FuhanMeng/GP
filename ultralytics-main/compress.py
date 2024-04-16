@@ -22,26 +22,26 @@ def finetune(param_dict, prune_model_path):
 if __name__ == '__main__':
     param_dict = {
         # origin
-        'model': 'ultralytics-main/runs_test/train/exp/weights/best.pt',
-        'data':'ultralytics-main/dataset/person_test/data_test.yaml',
+        'model': 'D:/a桌面文件存放/Git Demo/GP/ultralytics-main/runs_test_fn_eh/best.pt',
+        'data':'D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/person_test/data_test.yaml',
         'imgsz': 640,
-        'epochs': 100,  # 250-300
-        'batch': 16,
-        'workers': 8,
-        'cache': True,
+        'epochs': 10,  # 250-300
+        'batch': 1,  # 16
+        'workers': 1,  # 8
+        'cache': False,  # True
         'optimizer': 'SGD',
-        'device': '0',
+        'device': 'cpu',
         'close_mosaic': 0,
-        'project':'ultralytics-main/runs_test/prune',
-        'name':'yolov8-fasternet-EfficientHead-lamp-exp0',
+        'project':'ultralytics-main/runs_test_fn_eh/prune',
+        'name':'yolov8n-fasternet-EfficientHead-lamp-exp0',
         
         # prune
         'prune_method':'lamp',
         'global_pruning': True,
-        'speed_up': 4.0,
+        'speed_up': 1.1,
         'reg': 0.0005,
-        'sl_epochs': 500,
-        'sl_hyp': 'ultralytics/cfg/hyp.scratch.sl.yaml',
+        'sl_epochs': 10,
+        'sl_hyp': 'D:/a桌面文件存放/Git Demo/GP/ultralytics-main/ultralytics/cfg/hyp.scratch.sl.yaml',
         'sl_model': None,
     }
     
