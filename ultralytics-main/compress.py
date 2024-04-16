@@ -22,8 +22,8 @@ def finetune(param_dict, prune_model_path):
 if __name__ == '__main__':
     param_dict = {
         # origin
-        'model': 'D:/a桌面文件存放/Git Demo/GP/ultralytics-main/runs_test_fn_eh/best.pt',
-        'data':'D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/person_test/data_test.yaml',
+        'model': 'D:/a桌面文件存放/Git Demo/GP/ultralytics-main/prune_test/runs_test_eh1/best.pt',
+        'data': 'D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/person_test/data_test.yaml',
         'imgsz': 640,
         'epochs': 10,  # 250-300
         'batch': 1,  # 16
@@ -32,11 +32,11 @@ if __name__ == '__main__':
         'optimizer': 'SGD',
         'device': 'cpu',
         'close_mosaic': 0,
-        'project':'ultralytics-main/runs_test_fn_eh/prune',
-        'name':'yolov8n-fasternet-EfficientHead-lamp-exp0',
+        'project': 'D:/a桌面文件存放/Git Demo/GP/ultralytics-main/prune_test/runs_test_eh1',
+        'name': 'yolov8n_EfficientHead1_lamp_exp',
         
         # prune
-        'prune_method':'lamp',
+        'prune_method': 'lamp',
         'global_pruning': True,
         'speed_up': 1.1,
         'reg': 0.0005,
