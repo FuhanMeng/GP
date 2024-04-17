@@ -26,7 +26,8 @@ class Detect(nn.Module):
     strides = torch.empty(0)  # init
 
     def __init__(self, nc=80, ch=()):
-        """Initializes the YOLOv8 detection layer with specified number of classes and channels."""
+        """Initializes the YOLOv8 detection layer with specified number of classes and channels.
+        使用指定的类别数和通道数初始化检测层。"""
         super().__init__()
         self.nc = nc  # number of classes
         self.nl = len(ch)  # number of detection layers
@@ -41,7 +42,8 @@ class Detect(nn.Module):
         self.dfl = DFL(self.reg_max) if self.reg_max > 1 else nn.Identity()
 
     def forward(self, x):
-        """Concatenates and returns predicted bounding boxes and class probabilities."""
+        """Concatenates and returns predicted bounding boxes and class probabilities.
+        连接并返回预测的边界框和类概率。"""
         for i in range(self.nl):
             x[i] = torch.cat((self.cv2[i](x[i]), self.cv3[i](x[i])), 1)
         if self.training:  # Training path
@@ -74,7 +76,8 @@ class Detect(nn.Module):
         return y if self.export else (y, x)
 
     def bias_init(self):
-        """Initialize Detect() biases, WARNING: requires stride availability."""
+        """Initialize Detect() biases, WARNING: requires stride availability.
+        初始化Detect()的偏置，需要可用的步长。"""
         m = self  # self.model[-1]  # Detect() module
         # cf = torch.bincount(torch.tensor(np.concatenate(dataset.labels, 0)[:, 0]).long(), minlength=nc) + 1
         # ncf = math.log(0.6 / (m.nc - 0.999999)) if cf is None else torch.log(cf / cf.sum())  # nominal class frequency
@@ -83,7 +86,7 @@ class Detect(nn.Module):
             b[-1].bias.data[: m.nc] = math.log(5 / m.nc / (640 / s) ** 2)  # cls (.01 objects, 80 classes, 640 img)
 
     def decode_bboxes(self, bboxes):
-        """Decode bounding boxes."""
+        """Decode bounding boxes.解码边界框。"""
         return dist2bbox(self.dfl(bboxes), self.anchors.unsqueeze(0), xywh=True, dim=1) * self.strides
 
 

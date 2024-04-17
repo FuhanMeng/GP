@@ -155,11 +155,11 @@ def get_pruner(opt, model, example_inputs):
     #         ignored_layers.append(m.fusion_weight)
     
     # for EfficientHead中的PConv系列
-    # for k, m in model.named_modules():
-    #     if isinstance(m, Detect_Efficient):
-    #         ignored_layers.append(m.cv2)
-    #         ignored_layers.append(m.cv3)
-    #         ignored_layers.append(m.dfl)
+    for k, m in model.named_modules():
+        if isinstance(m, Detect_Efficient):
+            ignored_layers.append(m.cv2)
+            ignored_layers.append(m.cv3)
+            ignored_layers.append(m.dfl)
     # ignored_layers.append(model.model[15].cv2)
     # ignored_layers.append(model.model[18].cv2)
     # ignored_layers.append(model.model[21].cv2)

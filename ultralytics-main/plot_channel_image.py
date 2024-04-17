@@ -7,8 +7,8 @@ from ultralytics.nn.tasks import attempt_load_weights
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--base-weights', type=str, default='', help='base weights path')
-    parser.add_argument('--prune-weights', type=str, default='', help='prune weights path')
+    parser.add_argument('--base-weights', type=str, default='D:/a桌面文件存放/runs_test_eh10/yolov8n-EfficientHead10-lamp-exp-prune/weights/model_c2f_v2.pt', help='base weights path')
+    parser.add_argument('--prune-weights', type=str, default='D:/a桌面文件存放/runs_test_eh10/yolov8n-EfficientHead10-lamp-exp-prune/weights/prune.pt', help='prune weights path')
     opt = parser.parse_args()
     
     print(f'loading base model from {opt.base_weights}')
