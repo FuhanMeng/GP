@@ -1215,6 +1215,38 @@ python plot_channel_image.py --base-weights runs/prune/yolov8-repvit-RepNCSPELAN
 
 ```
 
+### Model:yolov8n-pose Dataset:WIDER-FACE
+```
+------------------ lamp exp1 ------------------
+param_dict = {
+    # origin
+    'model': 'runs/yolov8n-face-baseline/weights/best.pt',
+    'data':'widerface.yaml',
+    'imgsz': 640,
+    'epochs': 250,
+    'batch': 16,
+    'workers': 8,
+    'cache': False,
+    'optimizer': 'SGD',
+    'device': '0',
+    'close_mosaic': 0,
+    'project':'runs/prune',
+    'name':'yolov8n-pose-lamp-exp1',
+    
+    # prune
+    'prune_method':'lamp',
+    'global_pruning': True,
+    'speed_up': 2.0,
+    'reg': 0.0005,
+    'sl_epochs': 500,
+    'sl_hyp': 'ultralytics/cfg/hyp.scratch.sl.yaml',
+    'sl_model': None,
+}
+
+CUDA_VISIBLE_DEVICES=0 python get_FPS.py --weights runs/prune/yolov8n-pose-lamp-exp1-prune/weights/model_c2f_v2.pt --batch 32 --device 0 --warmup 200 --testtime 400
+CUDA_VISIBLE_DEVICES=0 python get_FPS.py --weights runs/prune/yolov8n-pose-lamp-exp1-prune/weights/prune.pt --batch 32 --device 0 --warmup 200 --testtime 400
+```
+
 # 使用教程
     剪枝操作问题，报错问题统一群里问，我群里回复谢谢~
 
@@ -1225,12 +1257,14 @@ python plot_channel_image.py --base-weights runs/prune/yolov8-repvit-RepNCSPELAN
 ## 视频
 
 整体的流程说明和讲解(第一个必须要看的视频):
-链接：https://pan.baidu.com/s/1ho0s0ZqJuZD5MPk-Nbbntg?pwd=bfuc 
-提取码：bfuc # BiliBili 魔鬼面具
+链接：https://pan.baidu.com/s/16Yn3fwbAvL3qN_ynXqp36g?pwd=qv3g 
+提取码：qv3g # BiliBili 魔鬼面具
 
 1. 20231221 增加一个使用教程的视频
 2. 20240114 增加一个c2f_v2转回去c2f的教程视频(需要对剪枝后的模型做蒸馏学习的必看!)
 3. 20240316 增加一个稀疏训练tensorboard结果可视化
+4. 20240415 增加segment,pose,obb剪枝说明
+5. 20240418 增加一个obb剪枝额外注意点的视频(obb剪枝必看！)
 
 --------------------------------------------------------------
 
@@ -1264,7 +1298,7 @@ yolov8-repvit-RepNCSPELAN.yaml教程：
 
 --------------------------------------------------------------
 
-yolov5v7的示例讲解(主要是增加剪枝跳层的理解):对于v8来说是一样理解的
+yolov5v7的示例讲解(主要是增加剪枝跳层的理解):
 1. yolov5n+C3-Faster+RepConv
 链接：https://pan.baidu.com/s/11UVcQINQUlzUQzWjTpp6fw?pwd=sa15 
 提取码：sa15 # BiliBili 魔鬼面具

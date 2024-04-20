@@ -32,7 +32,7 @@ if __name__ == '__main__':
     param_dict = {
         # origin
         'model': 'runs/train/yolov8-repvit-RepNCSPELAN/weights/best.pt',
-        'data': '/root/data_ssd/dataset_crowdhuman/data_20per.yaml',
+        'data':'/root/data_ssd/dataset_crowdhuman/data_20per.yaml',
         'imgsz': 640,
         'epochs': 250,
         'batch': 16,
@@ -41,11 +41,11 @@ if __name__ == '__main__':
         'optimizer': 'SGD',
         'device': '0',
         'close_mosaic': 0,
-        'project': 'runs/prune',
-        'name': 'yolov8-repvit-RepNCSPELAN-lamp-exp4',
+        'project':'runs/prune',
+        'name':'yolov8-repvit-RepNCSPELAN-lamp-exp4',
         
         # prune
-        'prune_method': 'lamp',
+        'prune_method':'lamp',
         'global_pruning': True,
         'speed_up': 4.0,
         'reg': 0.0005,

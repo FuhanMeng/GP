@@ -38,11 +38,11 @@ def get_activation(feat, backbone_idx=-1):
     def hook(model, inputs, outputs):
         if backbone_idx != -1:
             for _ in range(5 - len(outputs)): outputs.insert(0, None)
-            # for idx, i in enumerate(outputs):
-            #     if i is None:
-            #         print(idx, 'None')
-            #     else:
-            #         print(idx, i.size())
+            for idx, i in enumerate(outputs):  # 本来这五行是注释的，打开来看主干到底有几个注释
+                if i is None:
+                    print(idx, 'None')
+                else:
+                    print(idx, i.size())
             feat.append(outputs[backbone_idx])
         else:
             feat.append(outputs)
