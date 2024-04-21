@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # torch.save({'model':model.model.half()}, f'{model_weight_path[:model_weight_path.rfind(".")]}_v2.pt')
     
     # C2f_V2 -> C2f
-    model_v2_weight_path = 'runs/prune/yolov8n-light-lamp-exp1-finetune/weights/best.pt'
+    model_v2_weight_path = './prune_test/runs_test_eh10/yolov8n-EfficientHead10-lamp-exp-prune/weights/prune.pt'
     model = YOLO(model_v2_weight_path)
     model.model.eval()
     pre_res = model.model(input)[0]
