@@ -5,7 +5,7 @@ from tqdm import tqdm
 from sklearn.model_selection import train_test_split
 import argparse
 
-classes = ['ore carrier', 'fishing boat', 'passenger ship', 'general cargo ship', 'bulk cargo carrier', 'container ship']
+classes = ['person']
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--image_path', default='D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/person/images/test', type=str, help="path of images")
