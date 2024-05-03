@@ -4,7 +4,7 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     model = YOLO('ultralytics/cfg/models/v8/yolov8n.yaml')
-    model.load('yolov8n.pt') # loading pretrain weights
+    model.load('yolov8n.pt')  # loading pretrain weights
     model.train(data='dataset/data.yaml',
                 imgsz=640,
                 epochs=100,  #100
@@ -27,5 +27,5 @@ if __name__ == '__main__':
                 val=True,
                 plots=True,
                 project='runs/train',
-                name='exp',
+                name='exp_0503',
                 )

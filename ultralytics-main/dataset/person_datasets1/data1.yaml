@@ -11,7 +11,7 @@
 path: D:\a桌面文件存放\ultralytics-main\datasets\person # dataset root dir
 train: images/train # train images (relative to 'path') 128 images
 val: images/val # val images (relative to 'path') 128 images
-test: # test images (optional)
+test: images/test  # test images (optional)
 
 # Classes
 names:

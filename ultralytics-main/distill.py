@@ -6,7 +6,7 @@ from ultralytics.models.yolo.detect.distill import DetectionDistiller
 if __name__ == '__main__':
     param_dict = {
         # origin
-        'model': 'ultralytics/cfg/models/v8/yolov8n.yaml',
+        'model': 'ultralytics/cfg/models/v8/yolov8n.pt',
         'data': '/home/hjj/Desktop/dataset/dataset_visdrone/data_exp.yaml',
         'imgsz': 640,
         'epochs': 200,
@@ -17,7 +17,7 @@ if __name__ == '__main__':
         'device': '0',
         'close_mosaic': 20,
         'project': 'runs/distill',
-        'name': 'yolov8n-cwd-exp3',
+        'name': 'yolov8n-cwd-exp3-0503',
         
         # distill
         'prune_model': True,
