@@ -3,8 +3,8 @@ warnings.filterwarnings('ignore')
 from ultralytics import YOLO
 
 if __name__ == '__main__':
-    model = YOLO('./runs_test/distill_test/yolov8n-cwd-exp3/weights/best.pt')
-    model.val(data='./dataset/person_test/data_test.yaml',
+    model = YOLO('./deploy/exp_0503_s-20240503T141606Z-001/exp_0503_s/weights/best.pt')
+    model.val(data='./ultralytics-main/dataset/person_datasets1/data1.yaml',
               split='val',
               imgsz=640,
               batch=16,
