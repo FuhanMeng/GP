@@ -2,9 +2,9 @@ import warnings
 warnings.filterwarnings('ignore')
 import argparse, yaml, copy
 from ultralytics.models.yolo.detect.compress import DetectionCompressor, DetectionFinetune
-from ultralytics.models.yolo.segment.compress import SegmentationCompressor, SegmentationFinetune
-from ultralytics.models.yolo.pose.compress import PoseCompressor, PoseFinetune
-from ultralytics.models.yolo.obb.compress import OBBCompressor, OBBFinetune
+# from ultralytics.models.yolo.segment.compress import SegmentationCompressor, SegmentationFinetune
+# from ultralytics.models.yolo.pose.compress import PoseCompressor, PoseFinetune
+# from ultralytics.models.yolo.obb.compress import OBBCompressor, OBBFinetune
 
 def compress(param_dict):
     with open(param_dict['sl_hyp'], errors='ignore') as f:
@@ -35,7 +35,7 @@ if __name__ == '__main__':
         'data': '/root/data_ssd/dataset_crowdhuman/data_20per.yaml',
         'imgsz': 640,
         'epochs': 200,
-        'batch': 32,
+        'batch': 64,
         'workers': 8,
         'cache': True,
         'optimizer': 'SGD',

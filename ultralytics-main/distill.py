@@ -10,7 +10,7 @@ if __name__ == '__main__':
         'data': '/home/hjj/Desktop/dataset/dataset_visdrone/data_exp.yaml',
         'imgsz': 640,
         'epochs': 200,
-        'batch': 32,
+        'batch': 64,
         'workers': 8,
         'cache': True,
         'optimizer': 'SGD',

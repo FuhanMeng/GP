@@ -9,7 +9,7 @@ if __name__ == '__main__':
               imgsz=640,
               batch=16,
               # rect=False,
-              save_json=False,  # if you need to cal coco metrice
+              save_json=True,  # if you need to cal coco metrice
               project='./runs_test/distill_test/yolov8n-cwd-exp3/weights/test',
               name='exp',
               )
