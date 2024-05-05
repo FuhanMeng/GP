@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # torch.save({'model':model.model.half()}, f'{model_weight_path[:model_weight_path.rfind(".")]}_v2.pt')
     
     # C2f_V2 -> C2f
-    model_v2_weight_path = 'runs_test/prune_test/runs_test_eh10/yolov8n-EfficientHead10-lamp-exp-prune/weights/prune.pt'
+    model_v2_weight_path = '../deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/prune.pt'
     model = YOLO(model_v2_weight_path)
     model.model.eval()
     pre_res = model.model(input)[0]
@@ -25,4 +25,4 @@ if __name__ == '__main__':
     model.model.eval()
     after_res = model.model(input)[0]
     print(torch.mean(pre_res - after_res))
-    torch.save({'model':model.model.half()}, f'{model_v2_weight_path[:model_v2_weight_path.rfind(".")]}_notv2.pt')
+    torch.save({'model': model.model.half()}, f'{model_v2_weight_path[:model_v2_weight_path.rfind(".")]}_notv2.pt')
