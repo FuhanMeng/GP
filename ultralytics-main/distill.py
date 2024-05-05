@@ -6,8 +6,8 @@ from ultralytics.models.yolo.detect.distill import DetectionDistiller
 if __name__ == '__main__':
     param_dict = {
         # origin
-        'model': 'ultralytics/cfg/models/v8/yolov8n.pt',
-        'data': '/home/hjj/Desktop/dataset/dataset_visdrone/data_exp.yaml',
+        'model': '/content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/prune_notv2.pt',
+        'data': '/content/GP/ultralytics-main/dataset/person_datasets1/data1.yaml',
         'imgsz': 640,
         'epochs': 200,
         'batch': 64,
@@ -16,13 +16,13 @@ if __name__ == '__main__':
         'optimizer': 'SGD',
         'device': '0',
         'close_mosaic': 20,
-        'project': 'runs/distill',
-        'name': 'yolov8n-cwd-exp3-0503',
+        'project': '/content/drive/MyDrive/finished1',
+        'name': 'yolov8n-distill-cwd-exp-0505',
         
         # distill
         'prune_model': True,
-        'teacher_weights': 'runs/train/yolov8s/weights/best.pt',
-        'teacher_cfg': 'ultralytics/cfg/models/v8/yolov8s.yaml',
+        'teacher_weights': '/content/GP/deploy/exp_0503_s/weights/best.pt',
+        'teacher_cfg': '/content/GP/ultralytics-main/dataset/yolov8s-EfficientHead.yaml',
         'kd_loss_type': 'all',
         'kd_loss_decay': 'constant',  # 常量，不进行衰减
         # logical distillation settings
