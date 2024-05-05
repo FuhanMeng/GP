@@ -205,13 +205,13 @@ class yolov8_heatmap:
         
 def get_params():
     params = {
-        'weight': 'runs/train/exp2/weights/best.pt', # 现在只需要指定权重即可,不需要指定cfg
+        'weight': 'runs/train/exp2/weights/best.pt',  # 现在只需要指定权重即可,不需要指定cfg
         'device': 'cuda:0',
-        'method': 'HiResCAM', # GradCAMPlusPlus, GradCAM, XGradCAM, EigenCAM, HiResCAM, LayerCAM, RandomCAM, EigenGradCAM
+        'method': 'HiResCAM',  # GradCAMPlusPlus, GradCAM, XGradCAM, EigenCAM, HiResCAM, LayerCAM, RandomCAM, EigenGradCAM
         'layer': [10, 12, 14, 16, 18],
-        'backward_type': 'class', # class, box, all
-        'conf_threshold': 0.2, # 0.2
-        'ratio': 0.02, # 0.02-0.1
+        'backward_type': 'class',  # class, box, all
+        'conf_threshold': 0.2,  # 0.2
+        'ratio': 0.02,  # 0.02-0.1
         'show_box': False,
         'renormalize': True
     }

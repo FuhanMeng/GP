@@ -39,7 +39,7 @@ from ultralytics.nn.modules import Detect, RepConv
 from ultralytics.nn.extra_modules.MyPruner import DiverseBranchBlockPruner, LayerNormPruner, RepConvPruner, DyHeadBlockPruner, RepConvNPruner
 from timm.models.layers import SqueezeExcite
 
-# 没有购买yolov8项目需要注释以下
+
 from ultralytics.nn.extra_modules import Detect_Efficient, Detect_DyHead_Prune
 from ultralytics.nn.extra_modules.block import Faster_Block, Fusion, IFM, InjectionMultiSum_Auto_pool, TopBasicLayer, SimFusion_3in, SimFusion_4in, AdvPoolFusion, PyramidPoolAgg, RepVGGBlock, RepConvN
 from ultralytics.nn.extra_modules.rep_block import DiverseBranchBlock
