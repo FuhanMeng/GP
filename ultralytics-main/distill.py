@@ -17,7 +17,7 @@ if __name__ == '__main__':
         'device': '0',
         'close_mosaic': 20,
         'project': '/content/drive/MyDrive/finished1',
-        'name': 'yolov8n-distill-cwd-exp-0505',
+        'name': 'yolov8n-distill-cwd-0506-exp',
         
         # distill
         'prune_model': True,
