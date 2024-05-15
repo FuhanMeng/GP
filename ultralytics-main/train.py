@@ -14,7 +14,7 @@ if __name__ == '__main__':
                 cache=True,
                 workers=8,  # 8
                 device=0,
-                optimizer='SGD', # using SGD\Adam, AdamW, NAdam, RAdam, RMSProp
+                optimizer='SGD',  # using SGD\Adam, AdamW, NAdam, RAdam, RMSProp
                 # save=True,
                 # save_period=10,
                 # resume=True, # last.pt path

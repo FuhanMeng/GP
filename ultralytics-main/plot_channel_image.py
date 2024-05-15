@@ -7,8 +7,18 @@ from ultralytics.nn.tasks import attempt_load_weights
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--base-weights', type=str, default='../deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/model_c2f_v2.pt', help='base weights path')
-    parser.add_argument('--prune-weights', type=str, default='../deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/prune.pt', help='prune weights path')
+    parser.add_argument('--base-weights', type=str,
+                        default='../deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/model_c2f_v2.pt',
+                        help='base weights path')
+    parser.add_argument('--prune-weights', type=str,
+                        default='../deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/prune.pt',
+                        help='prune weights path')
+    # parser.add_argument('--base-weights', type=str,
+    #                     default='../deploy/yolov8n-distill-cwd-0506-exp/weights/prune_notv2.pt',
+    #                     help='base weights path')
+    # parser.add_argument('--prune-weights', type=str,
+    #                     default='../deploy/yolov8n-distill-cwd-0506-exp/weights/best.pt',
+    #                     help='prune weights path')
     opt = parser.parse_args()
     
     print(f'loading base model from {opt.base_weights}')
