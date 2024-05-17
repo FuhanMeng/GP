@@ -5,7 +5,7 @@ import matplotlib.pylab as plt
 
 pwd = os.getcwd()
 print(pwd)
-names = ['3yolov8n-pconvhead-prune-lamp-finetine-0504-exp', '2yolov8n-pconvhead-0504-exp']
+names = ['1yolov8n-0517-exp', '2yolov8n-pconvhead-0504-exp']
 
 plt.figure(figsize=(10, 10))
 
