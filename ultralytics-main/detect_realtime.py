@@ -8,7 +8,7 @@ if __name__ == '__main__':
                   imgsz=640,
                   project='runs/detect',
                   name='exp',
-                  conf=0.25,
+                  conf=0.38,
                   iou=0.7,
                   # 推理论据
                   # 可视化参数

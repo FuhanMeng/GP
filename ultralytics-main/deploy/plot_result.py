@@ -5,7 +5,7 @@ import matplotlib.pylab as plt
 
 pwd = os.getcwd()
 print(pwd)
-names = ['1yolov8n-0517-exp', '2yolov8n-pconvhead-0504-exp']
+names = ['finetine', 'distill']
 
 plt.figure(figsize=(10, 10))
 
@@ -51,7 +51,7 @@ plt.title('mAP_0.5:0.95')
 plt.legend()
 
 plt.tight_layout()
-plt.savefig('v8n_PConv_metrice_curve.png')
+plt.savefig('finetine_distill_metrice_curve.png')
 print(f'metrice_curve.png save in {pwd}/metrice_curve.png')
 
 plt.figure(figsize=(15, 10))
@@ -117,5 +117,5 @@ plt.title('val/cls_loss')
 plt.legend()
 
 plt.tight_layout()
-plt.savefig('v8n_PConv_loss_curve.png')
+plt.savefig('finetine_distill_loss_curve.png')
 print(f'loss_curve.png save in {pwd}/loss_curve.png')

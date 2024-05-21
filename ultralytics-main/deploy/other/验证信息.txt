@@ -1,0 +1,305 @@
+CPU Xeon
+一、prune
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n-EfficientHead summary (fused): 170 layers, 540432 parameters, 48129 gradients, 2.7 GFLOPs
+Downloading https://ultralytics.com/assets/Arial.ttf to '/root/.config/Ultralytics/Arial.ttf'...
+100% 755k/755k [00:00<00:00, 119MB/s]
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:03<00:00, 510.71it/s]
+val: New cache created: /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [03:12<00:00,  1.87s/it]
+                   all       1637       8530      0.774    0.00563       0.39      0.214
+Speed: 4.5ms preprocess, 101.9ms inference, 0.0ms loss, 0.3ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8n-efficienthead-lamp-prune-exp-0504-prune-val/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8n-efficienthead-lamp-prune-exp-0504-prune-val
+
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n-EfficientHead summary (fused): 170 layers, 540432 parameters, 48129 gradients, 2.7 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:03<00:00, 543.26it/s]
+val: New cache created: /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [03:37<00:00,  1.90s/it]
+                   all       1819       9516      0.779    0.00631      0.393      0.224
+Speed: 4.9ms preprocess, 103.7ms inference, 0.0ms loss, 0.3ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8n-efficienthead-lamp-prune-exp-0504-prune-test/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8n-efficienthead-lamp-prune-exp-0504-prune-test
+
+
+二、finetune
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n-EfficientHead summary (fused): 170 layers, 540432 parameters, 0 gradients, 2.7 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [03:14<00:00,  1.89s/it]
+                   all       1637       8530      0.888      0.829      0.915      0.604
+Speed: 4.9ms preprocess, 100.5ms inference, 0.0ms loss, 0.5ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8n-efficienthead-lamp-prune-exp-0504-finetine-val/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8n-efficienthead-lamp-prune-exp-0504-finetine-val
+
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n-EfficientHead summary (fused): 170 layers, 540432 parameters, 0 gradients, 2.7 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [03:48<00:00,  2.00s/it]
+                   all       1819       9516      0.899       0.83      0.918      0.609
+Speed: 5.0ms preprocess, 107.3ms inference, 0.0ms loss, 0.6ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8n-efficienthead-lamp-prune-exp-0504-finetine-test/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8n-efficienthead-lamp-prune-exp-0504-finetine-test
+
+
+三、distill
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n-EfficientHead summary (fused): 155 layers, 540432 parameters, 0 gradients, 2.7 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [03:21<00:00,  1.95s/it]
+                   all       1637       8530      0.894       0.83      0.915      0.605
+Speed: 5.1ms preprocess, 103.7ms inference, 0.0ms loss, 0.6ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8n-distill-cwd-0506-exp-val/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8n-distill-cwd-0506-exp-val
+
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n-EfficientHead summary (fused): 155 layers, 540432 parameters, 0 gradients, 2.7 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [03:54<00:00,  2.06s/it]
+                   all       1819       9516      0.893      0.831      0.915      0.608
+Speed: 5.2ms preprocess, 109.1ms inference, 0.0ms loss, 0.6ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8n-distill-cwd-0506-exp-test/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8n-distill-cwd-0506-exp-test
+
+distill中导出的onnx_best.onnx（还没测）
+
+
+四、n
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n-EfficientHead summary (fused): 154 layers, 2419283 parameters, 0 gradients, 5.5 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [04:46<00:00,  2.78s/it]
+                   all       1637       8530      0.901      0.839      0.926      0.624
+Speed: 4.3ms preprocess, 157.1ms inference, 0.0ms loss, 0.5ms postprocess per image
+Saving /content/drive/MyDrive/finished1/exp_0504_n-val/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/exp_0504_n-val
+
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n-EfficientHead summary (fused): 154 layers, 2419283 parameters, 0 gradients, 5.5 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [05:15<00:00,  2.77s/it]
+                   all       1819       9516      0.905      0.847      0.929      0.626
+Speed: 4.5ms preprocess, 156.0ms inference, 0.0ms loss, 0.6ms postprocess per image
+Saving /content/drive/MyDrive/finished1/exp_0504_n-test/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/exp_0504_n-test
+
+五、s
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8s-EfficientHead summary (fused): 154 layers, 9607635 parameters, 0 gradients, 21.5 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [13:19<00:00,  7.76s/it]
+                   all       1637       8530      0.903      0.879      0.945       0.65
+Speed: 5.1ms preprocess, 470.2ms inference, 0.0ms loss, 0.5ms postprocess per image
+Saving /content/drive/MyDrive/finished1/exp_0503_s-val/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/exp_0503_s-val
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8s-EfficientHead summary (fused): 154 layers, 9607635 parameters, 0 gradients, 21.5 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [13:57<00:00,  7.35s/it]
+                   all       1819       9516      0.919      0.878      0.947      0.655
+Speed: 3.4ms preprocess, 443.9ms inference, 0.0ms loss, 0.7ms postprocess per image
+Saving /content/drive/MyDrive/finished1/exp_0503_s-test/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/exp_0503_s-test
+
+六、没改进的n（没改进检测头）
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n summary (fused): 168 layers, 3151904 parameters, 0 gradients, 8.7 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [05:54<00:00,  3.44s/it]
+                   all       1637       8530      0.776      0.695       0.74      0.379
+                person       1637       8530      0.776      0.695       0.74      0.379
+Speed: 3.4ms preprocess, 194.8ms inference, 0.0ms loss, 3.8ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8n-0515-val/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8n-0515-val
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8n summary (fused): 168 layers, 3151904 parameters, 0 gradients, 8.7 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [06:47<00:00,  3.58s/it]
+                   all       1819       9516      0.796      0.698       0.75      0.385
+                person       1819       9516      0.796      0.698       0.75      0.385
+Speed: 5.1ms preprocess, 200.8ms inference, 0.0ms loss, 3.7ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8n-0515-test/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8n-0515-test
+
+自己训练的：在对模型精度等进行测试时，使用的cpu或者gpu或者更好的gpu，并不会影响模型精度等结果。但是测试下边的fps会得到不同结果。
+用的GPUT4
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n summary (fused): 168 layers, 3005843 parameters, 0 gradients, 8.1 GFLOPs
+Downloading https://ultralytics.com/assets/Arial.ttf to '/root/.config/Ultralytics/Arial.ttf'...
+100% 755k/755k [00:00<00:00, 96.9MB/s]
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:01<00:00, 1439.85it/s]
+val: New cache created: /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [00:16<00:00,  6.81it/s]
+                   all       1819       9516      0.906      0.858      0.934      0.639
+Speed: 0.2ms preprocess, 2.5ms inference, 0.0ms loss, 2.0ms postprocess per image
+Saving /content/drive/MyDrive/finished1/0yolov8n-0517-test-exp-gpuT4/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/0yolov8n-0517-test-exp-gpuT4
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n summary (fused): 168 layers, 3005843 parameters, 0 gradients, 8.1 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:01<00:00, 1441.76it/s]
+val: New cache created: /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [00:14<00:00,  7.16it/s]
+                   all       1637       8530      0.911      0.847      0.934      0.637
+Speed: 0.2ms preprocess, 2.7ms inference, 0.0ms loss, 2.1ms postprocess per image
+Saving /content/drive/MyDrive/finished1/0yolov8n-0517-val-exp-gpuT4/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/0yolov8n-0517-val-exp-gpuT4
+
+自己训练的，用的cpu Xeon
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (AMD EPYC 7B12)
+YOLOv8n summary (fused): 168 layers, 3005843 parameters, 0 gradients, 8.1 GFLOPs
+Downloading https://ultralytics.com/assets/Arial.ttf to '/root/.config/Ultralytics/Arial.ttf'...
+100% 755k/755k [00:00<00:00, 26.0MB/s]
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:04<00:00, 446.76it/s]
+val: New cache created: /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [04:34<00:00,  2.40s/it]
+                   all       1819       9516      0.906      0.858      0.934      0.639
+Speed: 2.6ms preprocess, 138.3ms inference, 0.0ms loss, 0.4ms postprocess per image
+Saving /content/drive/MyDrive/finished1/0yolov8n-0517-test-exp/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/0yolov8n-0517-test-exp
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (AMD EPYC 7B12)
+YOLOv8n summary (fused): 168 layers, 3005843 parameters, 0 gradients, 8.1 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:03<00:00, 449.17it/s]
+val: New cache created: /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [04:16<00:00,  2.49s/it]
+                   all       1637       8530      0.911      0.847      0.934      0.637
+Speed: 3.0ms preprocess, 144.0ms inference, 0.0ms loss, 0.4ms postprocess per image
+Saving /content/drive/MyDrive/finished1/0yolov8n-0517-val-exp/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/0yolov8n-0517-val-exp
+
+
+七、没改进的s
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8s summary (fused): 168 layers, 11156544 parameters, 0 gradients, 28.6 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/val.cache... 1637 images, 0 backgrounds, 0 corrupt: 100% 1637/1637 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 103/103 [15:01<00:00,  8.75s/it]
+                   all       1637       8530      0.776      0.724      0.753      0.385
+                person       1637       8530      0.776      0.724      0.753      0.385
+Speed: 3.0ms preprocess, 530.3ms inference, 0.0ms loss, 3.0ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8s-0515-val/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8s-0515-val
+
+
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CPU (Intel Xeon 2.20GHz)
+YOLOv8s summary (fused): 168 layers, 11156544 parameters, 0 gradients, 28.6 GFLOPs
+val: Scanning /content/GP/ultralytics-main/dataset/person_datasets1/labels/test.cache... 1819 images, 0 backgrounds, 0 corrupt: 100% 1819/1819 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 114/114 [17:22<00:00,  9.15s/it]
+                   all       1819       9516      0.794      0.733      0.764      0.392
+                person       1819       9516      0.794      0.733      0.764      0.392
+Speed: 4.7ms preprocess, 551.0ms inference, 0.0ms loss, 2.9ms postprocess per image
+Saving /content/drive/MyDrive/finished1/yolov8s-0515-test/predictions.json...
+Results saved to /content/drive/MyDrive/finished1/yolov8s-0515-test
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+get_FPS-T4GPU
+一、s
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8s-EfficientHead summary (fused): 154 layers, 9607635 parameters, 0 gradients, 21.5 GFLOPs
+Loaded /content/GP/deploy/exp_0503_s/weights/best.pt
+begin warmup...
+warmup....: 100% 200/200 [00:21<00:00,  9.24it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [02:07<00:00,  7.85it/s]
+model weights:/content/GP/deploy/exp_0503_s/weights/best.pt size:18.5M (bs:16)Latency:0.00792s +- 0.00827s fps:126.3
+
+二、n
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n-EfficientHead summary (fused): 154 layers, 2419283 parameters, 0 gradients, 5.5 GFLOPs
+Loaded /content/GP/deploy/exp_0504_n/weights/best.pt
+begin warmup...
+warmup....: 100% 200/200 [00:09<00:00, 22.20it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [00:50<00:00, 19.96it/s]
+model weights:/content/GP/deploy/exp_0504_n/weights/best.pt size:4.8M (bs:16)Latency:0.00311s +- 0.00274s fps:321.5
+
+三、没改进的n
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n summary (fused): 168 layers, 3151904 parameters, 0 gradients, 8.7 GFLOPs
+Loaded /content/GP/ultralytics-main/dataset/yolov8n.pt
+begin warmup...
+warmup....: 100% 200/200 [00:12<00:00, 16.07it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [01:07<00:00, 14.83it/s]
+model weights:/content/GP/ultralytics-main/dataset/yolov8n.pt size:6.2M (bs:16)Latency:0.00419s +- 0.00229s fps:238.7
+
+自己训练的：
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n summary (fused): 168 layers, 3005843 parameters, 0 gradients, 8.1 GFLOPs
+Loaded /content/GP/ultralytics-main/deploy/0yolov8n-0517-exp/weights/best.pt
+begin warmup...
+warmup....: 100% 200/200 [00:10<00:00, 19.86it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [00:52<00:00, 19.18it/s]
+model weights:/content/GP/ultralytics-main/deploy/0yolov8n-0517-exp/weights/best.pt size:5.9M (bs:16)Latency:0.00324s +- 0.00062s fps:308.4
+
+没改进的s
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8s summary (fused): 168 layers, 11156544 parameters, 0 gradients, 28.6 GFLOPs
+Loaded /content/GP/ultralytics-main/dataset/yolov8s.pt
+begin warmup...
+warmup....: 100% 200/200 [00:28<00:00,  7.11it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [02:32<00:00,  6.55it/s]
+model weights:/content/GP/ultralytics-main/dataset/yolov8s.pt size:21.5M (bs:16)Latency:0.00950s +- 0.00367s fps:105.3
+
+四、prune
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n-EfficientHead summary (fused): 170 layers, 540432 parameters, 540416 gradients, 2.7 GFLOPs
+Loaded /content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/prune.pt
+begin warmup...
+warmup....: 100% 200/200 [00:07<00:00, 26.57it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [00:39<00:00, 25.10it/s]
+model weights:/content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/prune.pt size:1.2M (bs:16)Latency:0.00247s +- 0.00288s fps:404.4
+
+model_c2f_v2.pt
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n-EfficientHead summary (fused): 170 layers, 2419283 parameters, 2419267 gradients, 5.5 GFLOPs
+Loaded /content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/model_c2f_v2.pt
+begin warmup...
+warmup....: 100% 200/200 [00:10<00:00, 19.54it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [00:56<00:00, 17.71it/s]
+model weights:/content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/model_c2f_v2.pt size:4.8M (bs:16)Latency:0.00351s +- 0.00284s fps:285.2
+
+prune_notv2.pt
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n-EfficientHead summary (fused): 155 layers, 540432 parameters, 540416 gradients, 2.7 GFLOPs
+Loaded /content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/prune_notv2.pt
+begin warmup...
+warmup....: 100% 200/200 [00:07<00:00, 26.14it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [00:40<00:00, 24.40it/s]
+model weights:/content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-prune4/weights/prune_notv2.pt size:1.2M (bs:16)Latency:0.00255s +- 0.00163s fps:392.9
+
+五、finetune
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n-EfficientHead summary (fused): 170 layers, 540432 parameters, 0 gradients, 2.7 GFLOPs
+Loaded /content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-finetune/weights/best.pt
+begin warmup...
+warmup....: 100% 200/200 [00:06<00:00, 29.28it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [00:37<00:00, 26.65it/s]
+model weights:/content/GP/deploy/yolov8n-efficienthead-lamp-prune-exp-0504-finetune/weights/best.pt size:4.6M (bs:16)Latency:0.00233s +- 0.00290s fps:429.1
+
+六、distill
+Ultralytics YOLOv8.1.9 🚀 Python-3.10.12 torch-2.2.1+cu121 CUDA:0 (Tesla T4, 15102MiB)
+YOLOv8n-EfficientHead summary (fused): 155 layers, 540432 parameters, 0 gradients, 2.7 GFLOPs
+Loaded /content/GP/deploy/yolov8n-distill-cwd-0506-exp/weights/best.pt
+begin warmup...
+warmup....: 100% 200/200 [00:06<00:00, 29.42it/s]
+begin test latency...
+test latency....: 100% 1000/1000 [00:37<00:00, 26.97it/s]
+model weights:/content/GP/deploy/yolov8n-distill-cwd-0506-exp/weights/best.pt size:1.2M (bs:16)Latency:0.00230s +- 0.00174s fps:434.5
+
+distill中的onnx_best.onnx  不行
+
+

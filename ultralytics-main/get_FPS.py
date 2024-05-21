@@ -32,18 +32,18 @@ def get_weight_size(path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    # parser.add_argument('--weights', type=str, default='../deploy/yolov8n-distill-cwd-0506-exp/weights/best.pt',
+    # parser.add_argument('--weights', type=str, default='./deploy/yolov8n-distill-cwd-0506-exp/weights/best.pt',
     #                     help='trained weights path')  # bs16 fps95
-    # parser.add_argument('--weights', type=str, default='../deploy/yolov8n-distill-cwd-0506-exp/weights/distill_best.onnx',
+    # parser.add_argument('--weights', type=str, default='./deploy/yolov8n-distill-cwd-0506-exp/weights/distill_best.onnx',
     #                     help='trained weights path')  # 无法测试onnx格式
-    parser.add_argument('--weights', type=str, default='../deploy/exp_0504_n/weights/best.pt',
+    parser.add_argument('--weights', type=str, default='./deploy/4yolov8n-pconvhead-distill-cwd-L2-0506-exp/weights/best.pt',
                         help='trained weights path')  # bs16 fps72
     # 这个batch的设置关系到实际推理用的显卡。如果显卡性能好，batch就可以设置的大一点。这样fps值也会高一点。o
-    parser.add_argument('--batch', type=int, default=16, help='total batch size for all GPUs')
+    parser.add_argument('--batch', type=int, default=8, help='total batch size for all GPUs')
     parser.add_argument('--imgs', nargs='+', type=int, default=[640, 640], help='[height, width] image sizes')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
-    parser.add_argument('--warmup', default=200, type=int, help='warmup time')
-    parser.add_argument('--testtime', default=1000, type=int, help='test time')
+    parser.add_argument('--warmup', default=20, type=int, help='warmup time')  # 200
+    parser.add_argument('--testtime', default=100, type=int, help='test time')  # 1000
     parser.add_argument('--half', action='store_true', default=False, help='fp16 mode.')
     opt = parser.parse_args()
     
@@ -89,3 +89,4 @@ if __name__ == '__main__':
     infer_time_per_image = np.sum(time_arr) / (opt.testtime * opt.batch)
     
     print(f'model weights:{opt.weights} size:{get_weight_size(opt.weights)}M (bs:{opt.batch})Latency:{infer_time_per_image:.5f}s +- {std_time:.5f}s fps:{1 / infer_time_per_image:.1f}')
+
