@@ -190,7 +190,7 @@ class Detect_Efficient(nn.Module):
         #self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 3), Conv(x, x, 3)) for x in ch)  # two 3x3 Conv 共享参数 8.2Gflops
         # self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 3, g=x // 16), Conv(x, x, 3, g=x // 16)) for x in ch) # two 3x3 Group Conv 组卷积5.7G(不提升精度)
         # self.stem = nn.ModuleList(nn.Sequential(Conv(x, x, 1), Conv(x, x, 3)) for x in ch) # one 1x1 Conv, one 3x3 Conv    6.9G
-        # 下边两个是自研的（多尺度信息、轻量化检测头）
+        # 下边两个是别人自研的（多尺度信息、轻量化检测头）
         # self.stem = nn.ModuleList(nn.Sequential(EMSConv(x), Conv(x, x, 1)) for x in ch) # one EMSConv, one 1x1 Conv    6.0G
         # self.stem = nn.ModuleList(nn.Sequential(EMSConvP(x), Conv(x, x, 1)) for x in ch) # one EMSConvP, one 1x1 Conv   6.5G
         # cvpr

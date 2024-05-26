@@ -4,8 +4,8 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # YOLOv8n summary: 225 layers, 3157200 parameters, 3157184 gradients, 8.9 GFLOPs
-    # model = YOLO('D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/yolov8n.yaml')
-    model = YOLO('D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/yolov8s-PConvHead.yaml')
+    model = YOLO('D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/yolov8n.yaml')
+    # model = YOLO('D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/yolov8n-PConvHead.yaml')
     # model = YOLO('D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/yolov8n-EfficientHead.yaml')
     # model = YOLO('D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/yolov8n-fasternet.yaml')
     # model = YOLO('D:/a桌面文件存放/Git Demo/GP/ultralytics-main/dataset/yolov8n-fasternet-EfficientHead.yaml')
